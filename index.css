@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-slate-950 text-slate-100 antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input, textarea, button, select {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.35);
+}
+
+@layer components {
+  .industrial-card {
+    @apply rounded-2xl border border-slate-800 bg-slate-900/80 shadow-industrial backdrop-blur;
+  }
+  .industrial-input {
+    @apply w-full rounded-xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-base text-slate-100 outline-none transition focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20;
+  }
+  .industrial-label {
+    @apply mb-2 block text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400;
+  }
+  .industrial-chip {
+    @apply inline-flex items-center gap-2 rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em];
+  }
+}
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
